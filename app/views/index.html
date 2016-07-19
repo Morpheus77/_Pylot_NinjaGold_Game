@@ -1,8 +1,50 @@
+<!doctype html>
+
 <html>
   <head>
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
-  </head>
-  <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+ </head>
+	<body>
+		<p id="yourGold">Your gold: {{gold}}</p>
+		
+		<div id = "Farm">
+		<form action="/process_money" method="post">
+		<input type="hidden" name="building" value="farm" />
+		<input type="submit" value="Find Gold!"/>
+		</form>
+		<h1>FARM<p>(earn 10-20 gold!)</p></h1>
+		</div>
+		
+		<div id = "Cave">
+		<form action="/process_money" method="post">
+		<input type="hidden" name="building" value="cave" />
+		<input type="submit" value="Find Gold!"/>
+		</form>
+		<h1>CAVE<p>(find 5-10 gold!)</p></h1>
+		</div>
+		
+		<div id = "House">
+		<form action="/process_money" method="post">
+		<input type="hidden" name="building" value="house" />
+		<input type="submit" value="Find Gold!"/>
+		</form>
+		<h1>HOUSE<p>(steal 2-5 gold!)</p></h1>
+		</div>
+		
+		<div id = "Casino">
+		<form action="/process_money" method="post">
+		<input type="hidden" name="building" value="casino" />
+		<input type="submit" value="Find Gold!"/>
+		</form>
+		<h1>CASINO<p>(earn/takes 0-50 gold!)</p></h1>
+		</div>
+		
+		<div id="log">
+		<p>Action:</p>
+		<textarea type="hidden" style="height:200px; width 2400px;" >{{message}}  Turn:{{turn}} </textarea>
+		<form action='/GameBoard/reset' method="GET">
+		<input type='submit'  name='redo' value='reset'></input>
+		</form>
+		</div>
+	</body>
 </html>

@@ -1,3 +1,48 @@
-* {
-  font-family: monaco;
+/*div{
+	height:300px;
+	width:300px;
+	background:gray;
+	display:inline-block;
+	margin-left:0px;
+}*/
+
+#yourGold{
+	display:block;
+	font-size:200%;
+}
+
+#Farm{
+	height:300px;
+	width:300px;
+	background:gray;
+	display:inline-block;
+	margin-left:0px;
+	border:3px solid gray;
+}
+
+#Cave{
+	height:300px;
+	width:300px;
+	background:gray;
+	display:inline-block;
+	margin-left:111px;
+	border:3px solid gray;
+}
+
+#House{
+	height:300px;
+	width:300px;
+	background:gray;
+	display:inline-block;
+	margin-left:111px;
+	border:3px solid gray;
+}
+
+#Casino{
+	height:300px;
+	width:300px;
+	background:gray;
+	display:inline-block;
+	margin-left:111px;
+	border:3px solid gray;
 }
