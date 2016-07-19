@@ -17,10 +17,10 @@ from system.core.router import routes
     The automatically generated routes respond to all of the http verbs (GET, POST, PUT, PATCH, DELETE)
 """
 routes['default_controller'] = 'GameBoard'
-routes['POST']['/process_money'] = 'GameBoard#getMoney'
+routes['POST']['/adventuring'] = 'GameBoard#adventuring'
 routes['GET']['/GameBoard/addTurn'] = 'GameBoard#addTurn'
 routes['GET']['/GameBoard/reset'] = 'GameBoard#reset'
-routes['GET']['/GameBoard/servsUP'] = 'GameBoard#servsUP'
+routes['GET']['/GameBoard/getMoney'] = 'GameBoard#getMoney'
 """
     You can add routes and specify their handlers as follows:
 

@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
  </head>
 	<body>
-		<p id="yourGold">Your gold: {{gold}}</p>
+		<p id="yourGold">Your gold: {{gold}}</p>{{sneak}}
 		
 		<div id = "Farm">
-		<form action="/process_money" method="post">
+		<form action="/adventuring" method="post">
 		<input type="hidden" name="building" value="farm" />
 		<input type="submit" value="Find Gold!"/>
 		</form>
@@ -16,7 +16,7 @@
 		</div>
 		
 		<div id = "Cave">
-		<form action="/process_money" method="post">
+		<form action="/adventuring" method="post">
 		<input type="hidden" name="building" value="cave" />
 		<input type="submit" value="Find Gold!"/>
 		</form>
@@ -24,7 +24,7 @@
 		</div>
 		
 		<div id = "House">
-		<form action="/process_money" method="post">
+		<form action="/adventuring" method="post">
 		<input type="hidden" name="building" value="house" />
 		<input type="submit" value="Find Gold!"/>
 		</form>
@@ -32,7 +32,7 @@
 		</div>
 		
 		<div id = "Casino">
-		<form action="/process_money" method="post">
+		<form action="/adventuring" method="post">
 		<input type="hidden" name="building" value="casino" />
 		<input type="submit" value="Find Gold!"/>
 		</form>
