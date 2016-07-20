@@ -38,17 +38,39 @@ class GameBoard(Controller):
 		
 	def getMoney(self):
 		if session['location'] == 'farm':
-			message = " " + "You are now in the {0}".format(session['location'])
-			session['gold'] = random.randint(1,10)
+			addGold = random.randint(10,20)
+			session['gold'] = session['gold'] + addGold
+			message = " " + "Ninja is now on the {0}. Farm work earned Ninja {1} gold!".format(session['location'],addGold)			
 			
 		if session['location'] == 'cave':
-			message = " " + "You are now in the {0}".format(session['location'])
+			addGold = random.randint(5,10)
+			session['gold'] = session['gold'] + addGold
+			message = " " + "Ninja is now in a {0}!  Spelunking has found Ninja {1} gold!".format(session['location'],addGold)
 			
 		if session['location'] == 'house':
-			message = " " + "You are now in the {0}".format(session['location'])
+			addGold= random.randint(2,5)
+			session['gold'] = session['gold'] + addGold
+			message = " " + "Ninja sneaks into a {0}... lifts {1} gold...  someone coming...!".format(session['location'],addGold)
 			
 		if session['location'] == 'casino':
-			message = " " + "You are now in the {0}".format(session['location'])
+			if session['gold'] <= 0:
+				message = " " + "Ninja cannot gamble with no gold! Ninja goes to rehab...".format(session['location'])
+				return self.load_view('index.html',message = message,turn = session['turn'],gold = session['gold'])
+			elif session['gold'] > 0:
+				addGold= random.randint(-50,50)
+				if addGold < 0:
+					session['gold'] = session['gold'] + addGold
+					if session['gold'] <=0:
+						session['gold'] = 0
+					message = "" + "Ninja trips to {0}, and  loses {1} gold!! Poor Ninja =(".format(session['location'],addGold)
+					return self.load_view('index.html', message = message, turn = session['turn'], gold = session['gold'])
+				session['gold'] = session['gold'] + addGold
+				if session['gold'] < 0:
+					session['gold'] = 0		
+					message = "" + "Ninja trips to {0}, and  loses {1} gold!! Poor Ninja =(".format(session['location'],addGold)
+					return self.load_view('index.html', message = message, turn = session['turn'], gold = session['gold'])
+				else:
+					message = "" + "Ninja trips to {0}! Wins {1} gold!! Lucky Ninja!!".format(session['location'],addGold)
 			
 		return self.load_view('index.html', message = message, turn = session['turn'], gold = session['gold'])
 		
